@@ -8,6 +8,4 @@ const apiBase = axios.create({
     },
 });
 
-console.log("API_URL", API_URL);
-
 export default apiBase;
