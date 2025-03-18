@@ -19,7 +19,7 @@ git clone git@github.com:lcamargo82/teddy.git
 
 ### 2. Acesse a pasta do projeto api
 
-Acesse a pasta do projeto para configurar:
+Acesse a pasta do projeto backend para configurar o env:
 
 ```bash
 cd teddy/api
@@ -35,10 +35,10 @@ cp example.env .env
 
 ### 4. Acesse a pasta do projeto frontend
 
-Volte para a raiz e acesse a pasta do projeto para configurar:
+Volte para a raiz do projeto (teddy) e acesse a pasta do projeto frontend para configurar o env:
 
 ```bash
-cd /frontend
+cd frontend
 ```
 
 ### 5. Configure o .env
@@ -51,7 +51,7 @@ cp example.env .env
 
 ### 4. Fazer o build e up do container
 
-Voltar para a raiz e faça o buid do container com as migrations e subir a aplicação:
+Voltar para a raiz do projeto (teddy) e faça o buid do container com as migrations e subir a aplicação:
 
 ```bash
 docker compose up --build -d
@@ -67,7 +67,7 @@ Frontend: http://localhost:5173/
 
 ### 6. Rodando os testes
 
-Rodando os testes:
+Rodando os testes do backend:
 
 ```bash
 docker exec -it nest_container sh -c "cd /app/api && npm run test"
