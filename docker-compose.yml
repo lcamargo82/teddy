@@ -1,0 +1,38 @@
+services:
+  app:
+    build:
+      context: .
+    container_name: nest_container
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+      - "5173:5173"
+    stdin_open: true # Keep the STDIN open for the container
+    tty: true # Keep the TTY open
+    depends_on:
+      - db
+    user: "1000:1000"
+    networks:
+      - dev_network 
+
+  db:
+    image: postgres:14
+    container_name: postgres_dev
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: db_teddy
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - dev_network
+
+volumes:
+  postgres_data:
+
+networks:
+  dev_network:
+    driver: bridge
